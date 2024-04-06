@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="english">
+  <head>   
+    <title>Chatbot GUI</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="../static/js/chat.js"></script>
+    <script src="../static/js/sendmess.js"></script>
+    <script src="../static/js/chatbot.js"></script>   
+  </head>
+
+
+  <body>
+
+    <div class="parent">
+     
+    <div class="chat-container-faq">
+      <div class="chat-header">
+        <h1>FAQs</h1>
+      </div>
+        <div class="faq-cards">
+        <div class="card" id="m1" onclick="faq()">
+            What is Average Package of IT department?
+          </div>
+          
+          <div class="card" id="m2" onclick="faq1()">
+            How many students got selected On campus in 2021-22
+          </div>
+          
+          <div class="card" id="m3" onclick="faq2()">           
+            Offcampus placements for last Four years
+          </div>
+
+          <div class="card" id="m4" onclick="faq3()">           
+            Oncampus placements for last Four years
+          </div>
+
+          <div class="card" id="m5" onclick="faq4()">
+            which companies recruits maximum students?
+          </div>
+
+          <div class="card"id="m6" onclick="faq5()">
+            how many companies visited in last four years?
+          </div>
+
+          <div class="card" id="m7" onclick="faq6()">
+            Comparison of students from last 4 years on the bases of there placements
+          </div>
+
+          
+      </div>
+    </div>
+
+
+
+    <div class="chat-container">
+      <div class="chat-header">
+        <h1>LIVE Chat</h1>
+      </div>
+      <div class="chat-box" id="chat-box">
+        <ul id="chat-messages">
+        </ul>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <input type="text" id="user-input" placeholder="Type a message...">
+        <button type='submit' id="submit" class="submit">Send</button>
+      </form>
+    </div>
+</div>
+
+<script>
+  function faq(){
+    const sq = document.getElementById("m1");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  };
+  
+  function faq1()
+  {
+    const sq = document.getElementById("m2");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+  
+  function faq2()
+  {
+    const sq = document.getElementById("m3");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+
+  function faq3()
+  {
+    const sq = document.getElementById("m4");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+
+  function faq4()
+  {
+    const sq = document.getElementById("m5");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+  
+  function faq5()
+  {
+    const sq = document.getElementById("m6");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+
+  function faq6()
+  {
+    const sq = document.getElementById("m7");
+    const message = sq.innerText;
+     if (message !== '') {
+      addMessage(message, 'user');   
+      sendAjaxRequest(message);
+    }
+  }
+
+
+
+  const chatForm = document.getElementById('chat-form');
+const chatInput = document.getElementById('user-input');
+const chatMessages = document.querySelector('#chat-messages');
+
+
+
+chatForm.addEventListener('submit',(event)=> {
+  event.preventDefault();
+  const message = chatInput.value.trim();
+  
+  if (message !== '') {
+    addMessage(message, 'user');
+    chatInput.value = '';   
+    sendAjaxRequest(message);
+  }
+});
+
+
+
+function sendAjaxRequest(message) {
+  const url = 'chatbot/?message=' + encodeURIComponent(message);
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText).response;
+        addMessage(response, 'bot');
+      }
+    }
+  };
+  xhr.open('GET', url);
+  xhr.send();
+}
+
+
+
+function addMessage(message, sender) {
+  const li = document.createElement('li');
+  li.textContent = message;
+  li.classList.add(sender);
+  chatMessages.appendChild(li);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  // Add the bot's response to the HTML document
+ 
+}
+</script>
+  </body>
+</html>

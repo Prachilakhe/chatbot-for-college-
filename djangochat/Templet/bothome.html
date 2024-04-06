@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="english">
+    <head>
+            <title>
+                Wall-E
+            </title>
+            <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+            <link rel="stylesheet" type="text/css" href="../static/css/style1.css">
+          <meta content="text/html; charset=utf-8" />
+          <script src="{% static 'js/chatbot.js' %}"></script>
+    </head> 
+
+<body class="bg">
+
+  <div class="nav"><a href="{% url 'about' %}">About</a></div> 
+  <div class="x">
+     <div class="n">Name: </div>
+     <input class="inp" type="text" placeholder="Enter your name here" id="nameinput">
+     <button title="Start Chatting" type="submit" class="sub" id="name-submit" onclick="chat()">Start Chatting</button>
+    </div>
+     
+   
+    </body>
+</html>

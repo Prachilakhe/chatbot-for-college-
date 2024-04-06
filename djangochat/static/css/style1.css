@@ -1,0 +1,106 @@
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.bg{
+    background: url(/static/images/wallpaperflare.com_wallpaper\ \(1\).jpg);
+   
+    background-size:cover;
+    background-repeat: no-repeat;
+    justify-content:center ;
+}
+
+.x{
+    
+    position: absolute;
+    width: 617px;
+    height: 340px;
+    margin-top: 160px;
+    margin-left: 430px;
+    background: rgba(217, 217, 217, 0.75);
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inp{
+    position: absolute;
+    width: 380px;
+    height: 39px;
+    padding-left: 10px;           
+    background: rgba(139, 226, 244, 0.75);
+    border-radius: 10px;
+    margin-top: 113px;
+    margin-left: 170px;
+    margin-bottom: 188px;
+    margin-right: 67;
+    border-width: 0px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inp:hover{
+    width:385px;
+    height:41px;
+    background: #D9D9D9;
+}
+
+.n{
+    position: absolute;
+    width: 145px;
+    height: 39px;
+    color: rgb(50, 48, 48);
+    font-family:'Times New Roman', Times, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 118px;
+    margin-left: 70px;
+    margin-bottom: 83px;
+    margin-right: 402px;            
+}
+
+.sub{
+    position: absolute;
+    width: 265px;
+    height: 46px;
+    margin-top: 218px;
+    margin-left: 176px;
+    margin-bottom: 76px;
+    margin-right: 176px;
+    background: rgba(41, 41, 197,0.75);
+    
+    border-radius: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #D9D9D9;
+    border-width: 0px; 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);          
+}
+.sub:hover
+{
+    width:270px;
+    height:50px;
+    background: #2794E4;
+    
+}
+.nav{
+    background: rgba(217, 217, 217, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-left:50px
+}
+
+.nav:hover{
+    background: rgba(217, 217, 217, 0.8);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25); 
+}
+
+.nav a{
+    text-decoration: none;
+    font-size: large;
+}
